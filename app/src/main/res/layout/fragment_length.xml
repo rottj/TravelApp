@@ -1,89 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     tools:context=".LengthFragment">
 
-    <RadioGroup
-        android:id="@+id/number_of_days_options"
-        android:layout_width="wrap_content"
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.travelapp.model.ReservationViewModel" />
+        <variable
+            name="lengthFragment"
+            type="com.example.travelapp.LengthFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        >
 
-        <RadioButton
-            android:id="@+id/two_days"
+        <RadioGroup
+            android:id="@+id/number_of_days_options"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2 days" />
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <RadioButton
-            android:id="@+id/three_days"
+            <RadioButton
+                android:id="@+id/two_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 days" />
+
+            <RadioButton
+                android:id="@+id/three_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3 days" />
+
+            <RadioButton
+                android:id="@+id/four_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 days" />
+
+            <RadioButton
+                android:id="@+id/five_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 days" />
+
+            <RadioButton
+                android:id="@+id/six_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6 days" />
+        </RadioGroup>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/number_of_days_options" />
+
+        <TextView
+            android:id="@+id/subtotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3 days" />
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            tools:text="Subtotal $500.00" />
 
-        <RadioButton
-            android:id="@+id/four_days"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/cancel_button"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="4 days" />
+            android:layout_marginEnd="16dp"
+            android:text="Cancel"
+            app:layout_constraintEnd_toStartOf="@id/next_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/next_button" />
 
-        <RadioButton
-            android:id="@+id/five_days"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="5 days" />
-
-        <RadioButton
-            android:id="@+id/six_days"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="6 days" />
-    </RadioGroup>
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/number_of_days_options" />
-
-    <TextView
-        android:id="@+id/subtotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider"
-        tools:text="Subtotal $500.00" />
-
-    <Button
-        android:id="@+id/cancel_button"
-        style="?attr/materialButtonOutlinedStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="Cancel"
-        app:layout_constraintEnd_toStartOf="@id/next_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/next_button" />
-
-    <Button
-        android:id="@+id/next_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/cancel_button"
-        app:layout_constraintTop_toBottomOf="@id/subtotal" />
+            android:layout_marginTop="16dp"
+            android:text="Next"
+            android:onClick='@{() -> lengthFragment.goToNextScreen()}'
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cancel_button"
+            app:layout_constraintTop_toBottomOf="@id/subtotal" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
