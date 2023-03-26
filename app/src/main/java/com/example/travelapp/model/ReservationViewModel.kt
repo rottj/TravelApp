@@ -30,7 +30,7 @@ class ReservationViewModel : ViewModel(){
     }
 
     init {
-        reset()
+        resetReservation()
     }
 
     fun setDestination(pickedDestination: String){
@@ -48,17 +48,22 @@ class ReservationViewModel : ViewModel(){
         updatePrice()
     }
 
-    fun updatePrice(){
-        //check destination
+    private fun updatePrice(){
         var calculatedPrice = (length.value?: 0) * PRICE_PER_DAY
-        //check transport
+
+        when (transport.value) {
+            "Plane" -> calculatedPrice += PRICE_FOR_PLANE
+            "Bus" -> calculatedPrice += PRICE_FOR_BUS
+            "Train" -> calculatedPrice += PRICE_FOR_TRAIN
+        }
+
         _price.value = calculatedPrice
 
     }
 
-    fun reset() {
-        _length.value = 0
-        _transport.value = ""
+    fun resetReservation() {
+        _length.value = 2
+        _transport.value = "Plane"
         _destination.value = ""
         _price.value = 0.0
     }

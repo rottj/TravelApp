@@ -41,6 +41,8 @@ class LengthFragment : Fragment() {
     }
 
     fun cancelResevation() {
+        sharedViewModel.resetReservation()
+        findNavController().navigate(R.id.action_lengthFragment_to_startFragment)
 
     }
 

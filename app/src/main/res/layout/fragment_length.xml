@@ -30,30 +30,40 @@
                 android:id="@+id/two_days"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:checked="@{viewModel.length == 2}"
+                android:onClick="@{() -> viewModel.setLength(2)}"
                 android:text="2 days" />
 
             <RadioButton
                 android:id="@+id/three_days"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:checked="@{viewModel.length == 3}"
+                android:onClick="@{() -> viewModel.setLength(3)}"
                 android:text="3 days" />
 
             <RadioButton
                 android:id="@+id/four_days"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:checked="@{viewModel.length == 4}"
+                android:onClick="@{() -> viewModel.setLength(4)}"
                 android:text="4 days" />
 
             <RadioButton
                 android:id="@+id/five_days"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:checked="@{viewModel.length == 5}"
+                android:onClick="@{() -> viewModel.setLength(5)}"
                 android:text="5 days" />
 
             <RadioButton
                 android:id="@+id/six_days"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:checked="@{viewModel.length == 6}"
+                android:onClick="@{() -> viewModel.setLength(6)}"
                 android:text="6 days" />
         </RadioGroup>
 
@@ -73,6 +83,7 @@
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider"
+            android:text="@{@string/total_price(viewModel.price)}"
             tools:text="Subtotal $500.00" />
 
         <Button
@@ -82,6 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:text="Cancel"
+            android:onClick="@{() -> lengthFragment.cancelResevation()}"
             app:layout_constraintEnd_toStartOf="@id/next_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/next_button" />

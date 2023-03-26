@@ -39,9 +39,11 @@ class TransportFragment : Fragment() {
         findNavController().navigate(R.id.action_transportFragment_to_summaryFragment)
     }
 
-    fun cancelResevation() {
-
+    fun cancelReservation() {
+        sharedViewModel.resetReservation()
+        findNavController().navigate(R.id.action_transportFragment_to_startFragment)
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

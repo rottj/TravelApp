@@ -1,6 +1,5 @@
 package com.example.travelapp
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -39,11 +38,12 @@ class SummaryFragment : Fragment() {
     }
 
     fun sendOrder() {
+        //intent
     }
 
 
     fun cancelReservation() {
-        sharedViewModel.reset()
+        sharedViewModel.resetReservation()
         findNavController().navigate(R.id.action_summaryFragment_to_startFragment)
     }
 

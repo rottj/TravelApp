@@ -41,6 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:text="@{viewModel.destination}"
                 tools:text="Warsaw" />
 
             <View
@@ -61,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="5 days" />
+                android:text="@{viewModel.length.toString()}" />
 
             <View
                 android:id="@+id/divider2"
@@ -81,8 +82,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Plane"
-                tools:text="Sunday" />
+                android:text="@{viewModel.transport}" />
 
             <View
                 android:id="@+id/divider3"
@@ -97,7 +97,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginTop="16dp"
-                tools:text="Total $500.00" />
+                android:text="@{@string/total_price(viewModel.price)}"
+                tools:text="Total $500.00"/>
 
         </LinearLayout>
 
@@ -111,6 +112,7 @@
     <Button
         android:id="@+id/cancel_button"
         style="?attr/materialButtonOutlinedStyle"
+        android:onClick="@{() -> summaryFragment.cancelReservation()}"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
