@@ -1,5 +1,6 @@
 package com.example.travelapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -37,8 +38,24 @@ class SummaryFragment : Fragment() {
         }
     }
 
-    fun sendOrder() {
-        //intent
+    fun sendReservation() {
+        val numberOfDays = sharedViewModel.length.value ?: 0
+        val reservationSummary = getString(
+            R.string.reservation_details,
+            sharedViewModel.destination.value.toString(),
+            getString(R.string.length, numberOfDays.toString()),
+            sharedViewModel.transport.value.toString(),
+            sharedViewModel.price.value.toString()
+        )
+
+        val intent = Intent(Intent.ACTION_SEND)
+            .setType("text/plain")
+            .putExtra(Intent.EXTRA_SUBJECT, "New travel reservation")
+            .putExtra(Intent.EXTRA_TEXT, reservationSummary)
+
+        if (activity?.packageManager?.resolveActivity(intent, 0) != null) {
+            startActivity(intent)
+        }
     }
 
 

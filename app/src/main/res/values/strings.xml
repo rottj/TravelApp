@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">TravelApp</string>
     <string name="total_price">Total %s</string>
+    <string name="length">%s days</string>
+    <string name="reservation_details">Destination: %1$s \nLength:  %2$s \nTransport: %3$s
+        \nTotal: %4$s \n\n Thank you!</string>
+
 </resources>
