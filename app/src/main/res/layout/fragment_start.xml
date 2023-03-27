@@ -32,7 +32,7 @@
             android:layout_marginTop="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Choose your destination"
+            android:text="@string/choose_your_destination"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -44,8 +44,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:minWidth="150dp"
-            android:text="Warsaw"
-            android:onClick='@{() -> startFragment.chooseDestination("Warsaw")}'
+            android:text="@string/warsaw"
+            android:onClick='@{() -> startFragment.chooseDestination(@string/warsaw)}'
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -54,8 +54,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Wroclaw"
-            android:onClick='@{() -> startFragment.chooseDestination("Wroclaw")}'
+            android:text="@string/wroclaw"
+            android:onClick='@{() -> startFragment.chooseDestination(@string/wroclaw)}'
             android:minWidth="150dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -66,8 +66,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:minWidth="150dp"
-            android:text="Cracow"
-            android:onClick='@{() -> startFragment.chooseDestination("Cracow")}'
+            android:text="@string/cracow"
+            android:onClick='@{() -> startFragment.chooseDestination(@string/cracow)}'
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnWroclaw" />

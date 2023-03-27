@@ -18,6 +18,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="16dp"
         >
 
         <RadioGroup
@@ -32,33 +33,33 @@
                 android:id="@+id/plane"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked='@{viewModel.transport.equals("Plane")}'
-                android:onClick='@{() -> viewModel.setTransport("Plane")}'
-                android:text="Plane" />
+                android:checked='@{viewModel.transport.equals(@string/plane)}'
+                android:onClick='@{() -> viewModel.setTransport(@string/plane)}'
+                android:text="@string/plane" />
 
             <RadioButton
                 android:id="@+id/bus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked='@{viewModel.transport.equals("Bus")}'
-                android:onClick='@{() -> viewModel.setTransport("Bus")}'
-                android:text="Bus" />
+                android:checked='@{viewModel.transport.equals(@string/bus)}'
+                android:onClick='@{() -> viewModel.setTransport(@string/bus)}'
+                android:text="@string/bus" />
 
             <RadioButton
                 android:id="@+id/train"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked='@{viewModel.transport.equals("Train")}'
-                android:onClick='@{() -> viewModel.setTransport("Train")}'
-                android:text="Train" />
+                android:checked='@{viewModel.transport.equals(@string/train)}'
+                android:onClick='@{() -> viewModel.setTransport(@string/train)}'
+                android:text="@string/train" />
 
             <RadioButton
                 android:id="@+id/ownTransport"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked='@{viewModel.transport.equals("Own transport")}'
-                android:onClick='@{() -> viewModel.setTransport("Own transport")}'
-                android:text="Own transport" />
+                android:checked='@{viewModel.transport.equals(@string/own_transport)}'
+                android:onClick='@{() -> viewModel.setTransport(@string/own_transport)}'
+                android:text="@string/own_transport" />
 
 
         </RadioGroup>
@@ -88,7 +89,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="Cancel"
+            android:text="@string/cancel"
             android:onClick="@{() -> transportFragment.cancelReservation()}"
             app:layout_constraintEnd_toStartOf="@id/next_button"
             app:layout_constraintStart_toStartOf="parent"
@@ -99,7 +100,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Next"
+            android:text="@string/next"
             app:layout_constraintBottom_toBottomOf="parent"
             android:onClick='@{() -> transportFragment.goToNextScreen()}'
             app:layout_constraintEnd_toEndOf="parent"

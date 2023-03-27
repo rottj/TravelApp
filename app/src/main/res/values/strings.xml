@@ -4,5 +4,19 @@
     <string name="length">%s days</string>
     <string name="reservation_details">Destination: %1$s \nLength:  %2$s \nTransport: %3$s
         \nTotal: %4$s \n\n Thank you!</string>
+    <string name="cancel">Cancel</string>
+    <string name="next">Next</string>
+    <string name="choose_your_destination">Choose your destination</string>
+    <string name="warsaw">Warsaw</string>
+    <string name="wroclaw">Wroclaw</string>
+    <string name="cracow">Cracow</string>
+    <string name="plane">Plane</string>
+    <string name="bus">Bus</string>
+    <string name="train">Train</string>
+    <string name="own_transport">Own transport</string>
+    <string name="destination">Destination</string>
+    <string name="length_label">LENGTH</string>
+    <string name="transport_label">TRANSPORT</string>
+    <string name="send_your_travel_to_another_app">Send your travel to another app</string>
 
 </resources>
