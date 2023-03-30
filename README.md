@@ -1,2 +1,3 @@
 # TravelApp
-App created to practise basics of Android apps building.
+App created to practise basics of Android apps building - LiveData, ShaedViewModel, Navigation component.
+
